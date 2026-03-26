@@ -1,0 +1,130 @@
+:root {
+  --bg: #020617;
+  --card: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.1);
+  --accent: #6366f1;
+  --accent2: #22c55e;
+  --text: #e2e8f0;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Layout */
+body {
+  font-family: Inter, system-ui;
+  background: radial-gradient(circle at top, #1e293b, #020617);
+  color: var(--text);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+/* App container */
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--card);
+  backdrop-filter: blur(20px);
+}
+
+/* Title */
+.title {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Video */
+video {
+  width: clamp(260px, 40vw, 360px);
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  transition: transform 0.3s;
+}
+
+video:hover {
+  transform: scale(1.04);
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+button {
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: white;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+button:hover {
+  transform: translateY(-2px) scale(1.05);
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+}
+
+/* Input */
+input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  flex: 1;
+}
+
+/* Messages */
+#messages {
+  max-height: 220px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.message {
+  padding: 8px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  animation: fade 0.3s ease;
+}
+
+.message:nth-child(odd) {
+  background: rgba(99, 102, 241, 0.2);
+}
+
+/* Animation */
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  body {
+    padding: 10px;
+  }
+}

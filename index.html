@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Realtime Camera Chat</title>
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+
+<body>
+
+  <main class="app">
+    <h1 class="title">Realtime Camera</h1>
+
+    <video id="video" autoplay playsinline></video>
+
+    <section class="controls">
+      <button id="startCam">Start</button>
+      <button id="stopCam">Stop</button>
+    </section>
+
+    <section class="controls">
+      <input id="msgInput" placeholder="Message..." />
+      <button id="sendMsg">Send</button>
+    </section>
+
+    <section id="messages"></section>
+  </main>
+
+  <script type="module" src="./src/main.ts"></script>
+</body>
+
+</html>
